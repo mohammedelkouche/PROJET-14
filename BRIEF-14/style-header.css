@@ -1,0 +1,104 @@
+        /* header */
+        /*  */
+        .img-header{
+            width: 100%;
+        }
+        .img-header-p{
+            margin-left: 50%;
+            margin-top:-10%;
+            /* margin-top: -50%; */
+        }
+
+        /* .header-image-menu{
+            background-image: url('images/photo-header.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 200px 50px;
+            opacity: 0.85;
+        } */
+        
+        .header-image-menu img{
+            width: 100%;
+            margin: none;
+            padding: none;
+            opacity: 0.85;
+        }
+        /* le style de text entre image de header */
+        .slogo{
+            font-style: italic;
+            WIDTH: 27%;
+            font-weight: bold;
+            font-size: 50px;
+            line-height: 31px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #000;
+            transform: translate(125%, -355%);
+            text-align: center;
+        }
+        legend{
+            color: #74684E;
+            position: relative;
+            margin-left: 39%;
+            margin-top: -6%;
+            width: 22% !important;
+        }
+        legend::after{
+            content: "";
+            display: block;
+            width: 117%;
+            height: 2px;
+            background-color: #000000;
+            position: absolute;
+            left: 135%;
+            top: 60%;
+        }
+
+        legend::before{
+            content: "";
+            display: block;
+            width: 117%;
+            height: 2px;
+            background-color: #000000;
+            position: absolute;
+            left: -156%;
+            top: 60%;
+        }
+
+        .div-category{
+            color: #74684E;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-left: 22%;
+        }
+        .category{
+            margin: 4%;
+        }
+        .category1::before{
+            content: "";
+            display: block;
+            width: 2px;
+            height: 30px;
+            background-color: #000000;
+            position: absolute;
+            margin-left: 12%;
+        
+        }
+        .category2::before{
+            content: "";
+            display: block;
+            width: 2px;
+            height: 30px;
+            background-color: #000000;
+            position: absolute;
+            margin-left: 13%;
+        }
+        .category3::before{
+            content: "";
+            display: block;
+            width: 2px;
+            height: 30px;
+            background-color: #000000;
+            position: absolute;
+            margin-left: 9%;
+        }

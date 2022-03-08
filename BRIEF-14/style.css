@@ -1,0 +1,42 @@
+/* navbar */
+#img_logo{
+    padding: 11PX;
+    MARGIN: -28PX;
+    width: 130PX;
+}
+
+.navbar-brand .icon{
+    width: 35px;
+    MARGIN-RIGHT: 31px;
+}
+
+.nav-link{
+    margin-left: 30px;
+}
+/* footer */
+.logo_f{
+    width: 18%;
+    margin-top: -11%;
+}
+.icon_f{
+    width: 30px;
+    margin: 10px;
+    
+}
+.r-social{
+    margin-left: 65%;
+    
+}
+.f_paiment{
+    display: flex;
+}
+
+h4{
+    font-family: Inria Sans;
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* header */
+
+
