@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font-family: Bokor;
+    margin: 30px 0px 10px  50px ;
+}
+#frame{
+    display: flex;
+    flex-direction: row;
+}
+#descreption-quantite-button{
+    margin-left: 30px;
+}
+#product-descreption{
+    margin-left: 48px;
+}
+#descriprtion{
+    margin-top: 30px;
+}
+#quantite-button{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 60px;
+    margin-top: 48px;
+}
+.crementation{
+    width: 20px;
+}
+#quantity{
+    text-align: center; 
+}
+#button-addtocart{
+    width: 50%;
+    background-color: #D6A173;
+    border:  solid 2px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 9px 46px 8px 0px
+    /* padding: 5px; */
+}
+a{
+    text-decoration:none !important;
+    color: #fff !important;
+    font-size: 17px;
+    /* padding: 5px; */
+}
+#div-img{
+    margin: 20px 88px 20px 250px;
+}

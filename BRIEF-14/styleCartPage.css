@@ -51,7 +51,8 @@ h1{
 }
 #product-price-value{
     margin-left: 50px;
-}#quantity{
+}
+#quantity{
    text-align: center; 
 }
 #subtotal-value{
@@ -74,18 +75,20 @@ h1{
     grid-template-columns: auto  auto;
 }
 .margin-button{
-    margin: 40px -237px 40px 193px;
-    width: 40%;
+    margin: 40px -195px 40px 184px;
+    width: 50%;
     background-color: #D6A173;
-    border:  solid 1px;
-    border-radius: 5px;
+    border:  solid 2px;
+    border-radius: 12px;
+    text-align: center;
     padding: 5px;
     /* border: solid;
     padding: 10px; */
 }
 a{
-    text-decoration: none;
-    color: #fff;
+    text-decoration:none !important;
+    color: #fff !important;
+    font-size: 20px;
 }
 /* button{
     color: #fff;
