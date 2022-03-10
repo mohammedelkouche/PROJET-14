@@ -61,7 +61,13 @@
                   <p  style="color:red;"><?php echo "out of stock" ?></p>
             <?php else: ?> 
                   <p class="price"><?php echo $row["prix"]?></p>
-                  <button>Add to Cart</button>
+                  <div id="button_chop_now">
+                    <a href='ProductOverview.php?id=".$row["idProduit"]."'>SHOP NOW</a>
+                    <!-- bootstra5 
+                        <a href='ProductOverview.php?id=".$row["idProduit"]."' class= 'btn btn-dark'>SHOP NOW</a>
+                    -->
+                  </div>
+                  <!-- <button><a href="">Add to Cart</a> </button> -->
               <?php endif ?>
             <!-- </a> -->
             </div>

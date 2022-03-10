@@ -1,6 +1,8 @@
 <?php 
     include "connexion.php";
-    include "Navbar.php";
+    $Shop=$_GET["id"];
+    $query = "SELECT FROM produit WHERE idProduit = $Shop ";
+    $result = mysqli_query($conn,$query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,35 +18,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="frame">
-        <div id="descreption-quantite-button">
-                <h1>Exfoliating Soap</h1>
-                <div id="product-descreption">
-                    <p id="descriprtion">descriprtion kjgukfhlirvjmvze fzemojveriovjeromf ermovjerzvojerov ermovjeromvjkermovkd ermofjeovjzermovjermovj reevmojrvmoervjemo ermovjervmoe</p>                    <div>
-                    <div id="quantite-button">
-                        <div>
-                            <label for="">SELECT QUANTITY</label>
-                            <div class="container">
-                                <input type="button" class="crementation" onclick="decrementValue()" value="-" class="button_increment" />
-                                <input type="text" name="quantity" value="1"  size="1"  id="quantity" />
-                                <input type="button" class="crementation" onclick="incrementValue()" value="+" class="button_increment"/>
+    <?php
+    include "Navbar.php";
+
+
+    if(mysqli_num_rows($result) > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo' 
+            <div id="frame">
+                <div id="descreption-quantite-button">
+                        <h1>Exfoliating Soap</h1>
+                        <div id="product-descreption">
+                            <p id="descriprtion">descriprtion kjgukfhlirvjmvze fzemojveriovjeromf ermovjerzvojerov ermovjeromvjkermovkd ermofjeovjzermovjermovj reevmojrvmoervjemo ermovjervmoe</p>                    <div>
+                            <div id="quantite-button">
+                                <div>
+                                    <label for="">SELECT QUANTITY</label>
+                                    <div class="container">
+                                        <input type="button" class="crementation" onclick="decrementValue()" value="-" class="button_increment" />
+                                        <input type="text" name="quantity" value="1"  size="1"  id="quantity" />
+                                        <input type="button" class="crementation" onclick="incrementValue()" value="+" class="button_increment"/>
+                                    </div>
+                                </div>
+                                <div id="button-addtocart">
+                                    <!-- <button type="submit" name="Proceed">Proceed to Checkout</button> -->
+                                    <a href="CartPage.php">ADD TO CART</a>
+                                </div>
                             </div>
                         </div>
-                        <div id="button-addtocart">
-                            <!-- <button type="submit" name="Proceed">Proceed to Checkout</button> -->
-                            <a href="CartPage.php">ADD TO CART</a>
-                        </div>
-                    </div>
+                    </div>   
                 </div>
-            </div>   
-        </div>
-        <div id="div-img">
-            <img src="image/test-photo.jpg" alt="" width="300" height="300">
-        </div>
-    </div>
-    <script src="script.js"></script>
+                <div id="div-img">
+                <img class="card-img-top" src="'. 'images/'. $row["image"].'" alt="HTML5 Icon" style="width:100%">
+                </div>
+            </div>
+            ' ;
+        }   }
+        ?>     
+            <script src="script.js"></script>
     <?php 
      include "footer.php";
     ?> 
+    <!-- <img src="image/test-photo.jpg" alt="" width="300" height="300"> -->
 </body>
 </html>

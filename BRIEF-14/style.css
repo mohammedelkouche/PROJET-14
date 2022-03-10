@@ -36,3 +36,17 @@ h4{
     font-size: 16px;
     font-style: italic;
 }
+#button_chop_now{
+    width: 50%;
+    background-color: #000;
+    border: solid 2px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0px 0px 8px 89px;
+}
+a{
+    text-decoration:none !important;
+    color: #fff !important;
+    font-size: 17px;
+    /* padding: 5px; */
+}
