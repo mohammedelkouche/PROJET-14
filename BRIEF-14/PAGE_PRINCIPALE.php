@@ -4,8 +4,8 @@
 ?>
 
 <?php 
-     $sql = "SELECT * FROM `produit`";
-     $result = mysqli_query($conn, $sql);
+    $sql = "SELECT * FROM `produit`";
+    $result = mysqli_query($conn, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +62,7 @@
             <?php else: ?> 
                   <p class="price"><?php echo $row["prix"]?></p>
                   <div id="button_chop_now">
-                    <a href='ProductOverview.php?id=".$row["idProduit"]."'>SHOP NOW</a>
+                    <a href="ProductOverview.php?id=<?php echo $row["idProduit"] ?>">SHOP NOW</a>
                     <!-- bootstra5 
                         <a href='ProductOverview.php?id=".$row["idProduit"]."' class= 'btn btn-dark'>SHOP NOW</a>
                     -->
