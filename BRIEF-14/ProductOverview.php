@@ -4,17 +4,23 @@
     $Shop=$_GET["id"];
     $query = "SELECT * FROM produit WHERE idProduit = $Shop ";
     $result = mysqli_query($conn,$query);
-    if(isset($_post["add_to_cart"])){
-        if($_SESSION["shopping cart"]){
+    if(isset($_POST["add_to_cart"])){
 
-            $cartArray = array(
-                'ID'=>$_GET['id'],
-                'code'=>$_POST['quantity']
-                // 'price'=$_POST['SerialNumber'],
-                // 'image'=>$image
-                )
-            ;
-        }
+        // if($_SESSION["shopping cart"]){
+
+                // $_SESSION['idP'][] = $_GET['id'];
+                // $_SESSION['Pquantity'] = $_POST['quantity'];
+                // $cartArray = array(
+                //     'id' => $_SESSION['idP'],
+                //     'quantity'=> $_SESSION['Pquantity']
+                // ) ;
+                // $_SESSION["shopping cart"]
+                // echo "<pre>";
+                // print_r($cartArray );
+                // echo "</pre>" ;
+            
+        // }
+        
     }
 ?>
 <!DOCTYPE html>
@@ -54,13 +60,13 @@
                                         </div>
                                     </div>
                                     <div id="button-addtocart">
-                                        <button type="submit"  name="add_to_cart">ADD TO CART</button>
+                                        <input type="submit" id="button-add" name="add_to_cart" value = "ADD TO CART">
                                     </div>
                                 </div>
                         </div>
                     </div>
                     <div id="div-img" class="flex-div">
-                        <img class="card-img-top" src="'. 'images/'. $row["image"].'" alt="HTML5 Icon" style="width:90%"  >
+                        <img class="card-img-top" src="'.'images/'.$row["image"].'" alt="HTML5 Icon" style="width:90%"  >
                     </div>
                 </div>
             </form>
@@ -75,3 +81,4 @@
     <!-- <img src="image/test-photo.jpg" alt="" width="300" height="300"> -->
 </body>
 </html>
+<input type="button">

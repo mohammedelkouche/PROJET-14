@@ -52,7 +52,7 @@ label{
     text-align: center;
     margin: 16px 0px 0px 28px
 } */
-button{
+#button-add{
     width: 82%;
     background-color: #D6A173;
     border: solid 2px #000;
@@ -66,3 +66,13 @@ button{
     color: #fff !important;
     font-size: 17px;
 } */
+@media (max-width: 576px){
+    h1{
+        font-size: 22px;
+        margin: 20px 0px 10px 10px;
+    }
+    #frame .flex-div{
+        width: 40%;
+    }
+
+}

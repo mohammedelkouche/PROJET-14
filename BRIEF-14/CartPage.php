@@ -1,6 +1,14 @@
 <?php 
+    session_start();
+
     include "connexion.php";
     include "Navbar.php";
+    $Shop=$_GET["id"];
+    $query = "SELECT * FROM produit WHERE idProduit = $Shop ";
+    $result = mysqli_query($conn,$query);
+    // print_r($_SESSION['idP']);
+    // print_r($_SESSION['quantity']);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,17 +24,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+ 
     <!-- navbar -->
     <div>
         <h1>Shopping Cart</h1>
     </div> 
     <div id="frame">   
+        <?php while ($row = mysqli_fetch_assoc($result)): ?>
         <div>
             <div id="frame-content">
                 <div class="info">
                     <div class="clearfix">
-                        <img class="product-on-cart" src="image/test-photo.jpg" alt="" width="150" height="150">
+                        <?php echo '<img class="card-img-top" src="' .'images/'. $row["image"].'" alt="HTML5 Icon" width="150" height="150" >' ;?>
+                        <!-- <img class="product-on-cart" src="image/test-photo.jpg" alt="" width="150" height="150"> -->
                     </div>
                     <div >
                         <p id="product-name"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...</p>
@@ -44,8 +54,8 @@
                     <!-- </p id="subtotal-value">12</p> -->
                 </div>
             </div>
-            <hr id="demarcation1">
-        </div>    
+                <hr id="demarcation1">
+            </div>    
             <div id="Checkout-total">
                 <div class="margin-button">
                     <!-- <button type="submit" name="Proceed">Proceed to Checkout</button> -->
@@ -59,8 +69,12 @@
                     <p>Value</p>
                 </div>
             </div>
-            </div>   
+        </div> 
+        <?php
+            endwhile;
+        ?>  
     </div>
+    
     
     <script src="script.js"></script>
     <?php 

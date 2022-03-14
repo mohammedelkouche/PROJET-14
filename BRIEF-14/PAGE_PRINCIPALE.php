@@ -51,7 +51,6 @@
             
             <div class="card col-sm-12 col-md-8 col-lg-6">
             <div>
-            <!-- <a href="item.php?id=<?php echo $row["idProduit"] ?>"> -->
             <?php echo '<img class="card-img-top" src="'. 'images/'. $row["image"].'" alt="HTML5 Icon" style="width:100%">';?>
             <h4 ><?php echo $row["libelle"]?></h4>
        
@@ -91,11 +90,6 @@
                     <img class="photo-article1" src="images/article1.jpg">
                 </div>
             </div> -->
-
-
-
-
-
 
             <div class="her">
                 <div class="bg">
