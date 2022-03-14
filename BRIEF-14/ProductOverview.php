@@ -1,8 +1,21 @@
-<?php 
+<?php
+    session_start();
     include "connexion.php";
     $Shop=$_GET["id"];
     $query = "SELECT * FROM produit WHERE idProduit = $Shop ";
     $result = mysqli_query($conn,$query);
+    if(isset($_post["add_to_cart"])){
+        if($_SESSION["shopping cart"]){
+
+            $cartArray = array(
+                'ID'=>$_GET['id'],
+                'code'=>$_POST['quantity']
+                // 'price'=$_POST['SerialNumber'],
+                // 'image'=>$image
+                )
+            ;
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +37,7 @@
     if(mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_assoc($result)){
             echo' 
-            <form action = "CartPage.php" enctype="multipart/form-data" method = "POST">
+            <form action = "CartPage.php?id='.$row['idProduit'].'" enctype="multipart/form-data" method = "POST">
                 <div id="frame">
                     <div id="descreption-quantite-button" class="flex-div">
                         <h1>Exfoliating Soap</h1>
@@ -41,7 +54,7 @@
                                         </div>
                                     </div>
                                     <div id="button-addtocart">
-                                        <button type="submit"  name="ADDTOCART">ADD TO CART</button>
+                                        <button type="submit"  name="add_to_cart">ADD TO CART</button>
                                     </div>
                                 </div>
                         </div>
