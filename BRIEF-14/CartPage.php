@@ -1,14 +1,39 @@
 <?php 
     session_start();
-
+    // session_destroy();
     include "connexion.php";
     include "Navbar.php";
-    $Shop=$_GET["id"];
+    $Shop = $_GET["id"];
     $query = "SELECT * FROM produit WHERE idProduit = $Shop ";
     $result = mysqli_query($conn,$query);
+
+    //////////////////////
+    // test if action = "CartPage.php"
+    if(isset($_POST["add_to_cart"])){
+
+        // if($_SESSION["shopping cart"]){
+                
+                $id = $_GET['id'];
+                // $_SESSION['idP'] = $_GET['id'];
+                // $_SESSION['Pquantity'] = $_POST['quantity'];
+                $_SESSION['cartArray'][$id] = array(
+                    'pid' => $id ,
+                    'pquantity' => $_POST['quantity']
+                ) ;
+                // $_SESSION["shopping cart"] ;
+                         
+        }   
+        $pquantity = array_column( $_SESSION['cartArray'], 'pquantity');
+        print_r($pquantity);
+
+    // }
+    echo "<pre>";
+    print_r($_SESSION['cartArray']);
+    echo "</pre>" ;  
     // print_r($_SESSION['idP']);
     // print_r($_SESSION['quantity']);
-
+    ///////////////////////
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">

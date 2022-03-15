@@ -42,7 +42,8 @@ label{
     width: 20px;
 }
 #quantity{
-    text-align: center; 
+    text-align: center;
+    width: 16%;
 }
 /* #button-addtocart{
     width: 82%;

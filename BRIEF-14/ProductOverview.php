@@ -4,11 +4,11 @@
     $Shop=$_GET["id"];
     $query = "SELECT * FROM produit WHERE idProduit = $Shop ";
     $result = mysqli_query($conn,$query);
-    if(isset($_POST["add_to_cart"])){
+    // if(isset($_POST["add_to_cart"])){
 
         // if($_SESSION["shopping cart"]){
 
-                // $_SESSION['idP'][] = $_GET['id'];
+                // $_SESSION['idP'] = $_GET['id'];
                 // $_SESSION['Pquantity'] = $_POST['quantity'];
                 // $cartArray = array(
                 //     'id' => $_SESSION['idP'],
@@ -17,11 +17,10 @@
                 // $_SESSION["shopping cart"]
                 // echo "<pre>";
                 // print_r($cartArray );
-                // echo "</pre>" ;
-            
-        // }
+                // echo "</pre>" ;           
+        // }   
         
-    }
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +40,7 @@
     include "Navbar.php";
 
     if(mysqli_num_rows($result) > 0){
-        while($row = mysqli_fetch_assoc($result)){
+        $row = mysqli_fetch_assoc($result) ;
             echo' 
             <form action = "CartPage.php?id='.$row['idProduit'].'" enctype="multipart/form-data" method = "POST">
                 <div id="frame">
@@ -55,7 +54,7 @@
                                             <label for="">SELECT QUANTITY</label>
                                         <div class="input">                                  
                                             <input type="button" class="crementation" onclick="decrementValue()" value="-" " />
-                                            <input type="text" name="quantity" value="1"  size="1"  id="quantity" />
+                                            <input type="number" name="quantity" value="1"  size="1"  id="quantity" />
                                             <input type="button" class="crementation" onclick="incrementValue()" value="+" "/>
                                         </div>
                                     </div>
@@ -71,7 +70,7 @@
                 </div>
             </form>
             ' ;
-        }   }
+          }
         ?>     
             <script src="script.js"></script>
     <?php 
