@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+?>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="javascript:void(0)"><img id="img_logo" src="images/logo.png" ></a>
@@ -7,7 +10,7 @@
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">HOME</a>
+          <a class="nav-link" href="PAGE_PRINCIPALE.php">HOME</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="javascript:void(0)">SHOP</a>
@@ -23,7 +26,18 @@
             <!-- <li><a class="dropdown-item" href="#"></a></li> -->
           </ul>
         </li>
-      <a class="navbar-brand" href="javascript:void(0)"><img class="icon" src="images/panier1.png" ></a>
+      <a class="navbar-brand" href="CartPage.php"><img class="icon" src="images/panier1.png" >
+        <span>
+          <?php
+            if(isset($_SESSION['cartArray'])){
+              echo count($_SESSION['cartArray']);
+              }
+            else{
+              echo 0 ;
+            }
+          ?>
+        </span>
+      </a>
 
     </div>
   </div>
