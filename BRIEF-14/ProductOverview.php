@@ -52,7 +52,7 @@
                                 <div id="quantite-button"> 
                                     <div> 
                                             <label for="">SELECT QUANTITY</label>
-                                        <div class="input">                                  
+                                        <div class="input">
                                             <input type="button" class="crementation" onclick="decrementValue()" value="-" " />
                                             <input type="number" name="quantity" value="1"  size="1"  id="quantity" />
                                             <input type="button" class="crementation" onclick="incrementValue()" value="+" "/>

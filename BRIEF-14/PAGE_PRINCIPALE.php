@@ -60,7 +60,7 @@
                   <p  style="color:red;"><?php echo "out of stock" ?></p>
             <?php else: ?> 
                   <p class="price"><?php echo $row["prix"]?></p>
-                  <div id="button_chop_now">
+                  <div id="button_chop_now">    
                     <a href="ProductOverview.php?id=<?php echo $row["idProduit"] ?>">SHOP NOW</a>
                     <!-- bootstra5 
                         <a href='ProductOverview.php?id=".$row["idProduit"]."' class= 'btn btn-dark'>SHOP NOW</a>
@@ -75,7 +75,7 @@
             <?php
                 endwhile;
             ?>
-            </div>
+        </div>
             <!-- <div class="article1">
                  <div class="div2-article1">
                         <h2 class="titre-article1">OUR FORMULAE</h2>
