@@ -14,16 +14,16 @@
                     'pid' => $id ,
                     'pquantity' => $_POST['quantity']
                 ) ;      
-        }   
-        // $pquantity = array_column( $_SESSION['cartArray'], 'pquantity');
-        // print_r($pquantity);
-
-    // }
-
+        // }   
+    }
+    if(isset($_GET['remove'])){
+        $id = $_GET['remove'] ;
+        unset($_SESSION['cartArray'][$id]);
+        header("location:CartPage");
+    }
     // echo "<pre>";
     // print_r($_SESSION['cartArray']);
-    // echo "</pre>" ;  
-    
+    // echo "</pre>" ;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="styleCartPage.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="style-header.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -56,6 +57,7 @@
             <div id="frame-content">
                 <div class="info">
                     <div class="clearfix">
+                        <span><?php echo'<a href="?remove = '.$key.'"> DELETE</a> ';?></span>
                         <?php echo '<img class="card-img-top" src="' .'images/'.$worth['image'].'" alt="HTML5 Icon" width="150" height="150" >' ;?>
                     </div>
                     <div >
