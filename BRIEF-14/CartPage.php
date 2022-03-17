@@ -3,9 +3,9 @@
     // session_destroy();
     include "connexion.php";
     include "Navbar.php";
-    $Shop = $_GET["id"];
-    $query = "SELECT * FROM produit WHERE idProduit = $Shop ";
-    $result = mysqli_query($conn,$query);
+    // $Shop = $_GET["id"];
+    // $query = "SELECT * FROM produit WHERE idProduit = $Shop ";
+    // $result = mysqli_query($conn,$query);
     if(isset($_POST["add_to_cart"])){
         // if($_SESSION["shopping cart"]){  
                 $id = $_GET['id'];
@@ -17,9 +17,7 @@
         }   
         // $pquantity = array_column( $_SESSION['cartArray'], 'pquantity');
         // print_r($pquantity);
-
     // }
-
     // echo "<pre>";
     // print_r($_SESSION['cartArray']);
     // echo "</pre>" ;  
@@ -61,11 +59,15 @@
                     <div >
                         <p id="product-name"> <?php $worth['libelle'] ?>
                             <span>price: <?php echo $worth['prix'] ?></span><input type="hidden" class = "price" value="<?php echo $worth['prix'] ?>">
+                            <img src="images/trash.png">
                         <!-- <p id="product_price">price: <span id="product-price-value"><?php// echo $worth['prix'] ?></span> </p> -->
+                        <script>
+                            decrementValue();
+                        </script>
                         <div class="container">
-                            <input type="button" onclick="decrementValue()" value="-" class="button_increment" />
+                            <input type="button" onclick="decrementValue()" value="-" class="button_increment min_<?php echo $worth['idProduit'] ?>" />
                             <input type="text" onchange="subtotal()" name="quantity" value="<?php echo $value['pquantity'] ?>"  size="1"  id="quantity" class="quantity" />
-                            <input type="button" onclick="incrementValue()" value="+" class="button_increment"/>
+                            <input type="button" onclick="alert('test');incrementValue()" value="+" class="button_increment max_<?php echo $worth['idProduit'] ?>"/>
                         </div>
                     </div>
                 </div>
@@ -75,11 +77,53 @@
                     <!-- </p id="subtotal-value">12</p> -->
                 </div>
             </div>
-        <?php
+            <script>
+                var price = document.getElementsByClassName('price') ;
+                var quantity = document.getElementsByClassName('quantity') ;
+                var subtotalproducts = document.getElementsByClassName('subtotalproducts');
+                var gtotal = document.getElementById('gtotal');
+                gt = 0 ;         
+                
+                         
+                function incrementValue()
+                {
+                    alert("test2");
+                    var value = parseInt(document.getElementsByClassName('max_<?php echo $worth['idProduit'] ?>').value);
+                    value = isNaN(value) ? 0 : value;
+                    // if(value<100){
+                        value++;
+                            document.getElementById('quantity').value = value;
+                            subtotal() ;
+                    // }
+                }
+                function decrementValue()
+                {
+                    var value = parseInt(document.getElementsByClassName('max_<?php echo $worth['idProduit'] ?>').value);
+                    value = isNaN(value) ? 0 : value;
+                    if(value>1){
+                        value--;
+                            document.getElementById('quantity').value = value;
+                            subtotal() ;
+                    }
+                }
+                function subtotal(){
+                    // gt = 0 ;
+                    for(i=0;i<price.length; i++){
+                        subtotalproducts[i].innerText=(price[i].value)*(quantity[i].value);
+                        // gt += (price[i].value)*(quantity[i].value);
+                    }
+                    // gtotal.innerText = gt ;
+                } 
+                subtotal() ;
+            </script>
+            
+            <?php
                 // $total_price += ($value['pquantity'] * $worth['prix']) ; 
                         }
+                    
+
                     }
-        ?> 
+            ?> 
                 <hr id="demarcation1">
             </div>    
             <div id="Checkout-total">

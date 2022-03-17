@@ -4,23 +4,6 @@
     $Shop=$_GET["id"];
     $query = "SELECT * FROM produit WHERE idProduit = $Shop ";
     $result = mysqli_query($conn,$query);
-    // if(isset($_POST["add_to_cart"])){
-
-        // if($_SESSION["shopping cart"]){
-
-                // $_SESSION['idP'] = $_GET['id'];
-                // $_SESSION['Pquantity'] = $_POST['quantity'];
-                // $cartArray = array(
-                //     'id' => $_SESSION['idP'],
-                //     'quantity'=> $_SESSION['Pquantity']
-                // ) ;
-                // $_SESSION["shopping cart"]
-                // echo "<pre>";
-                // print_r($cartArray );
-                // echo "</pre>" ;           
-        // }   
-        
-    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
