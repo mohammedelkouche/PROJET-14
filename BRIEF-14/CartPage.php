@@ -1,5 +1,5 @@
 <?php 
-    session_start();
+    // session_start();
     // session_destroy();
     include "connexion.php";
     include "Navbar.php";
@@ -21,7 +21,7 @@
     // echo "<pre>";
     // print_r($_SESSION['cartArray']);
     // echo "</pre>" ;  
-    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,19 +50,23 @@
                 $result = mysqli_query( $conn, $query) ;
                 foreach( $result as $worth){
         ?>
-        <div>
+        <div>                                             
             <div id="frame-content">
                 <div class="info">
                     <div class="clearfix">
                         <?php echo '<img class="card-img-top" src="' .'images/'.$worth['image'].'" alt="HTML5 Icon" width="150" height="150" >' ;?>
                     </div>
+                    
                     <div >
                         <p id="product-name"> <?php $worth['libelle'] ?>
+            <a href='CartPage.php?remove=<?php echo $worth["idProduit"] ?>'><img src='images/trash.png'></a>
+
                             <span>price: <?php echo $worth['prix'] ?></span><input type="hidden" class = "price" value="<?php echo $worth['prix'] ?>">
-                            <img src="images/trash.png">
+                            <!-- <img src="images/trash.png"> -->
+                            
+
                         <!-- <p id="product_price">price: <span id="product-price-value"><?php// echo $worth['prix'] ?></span> </p> -->
                         <script>
-                            decrementValue();
                         </script>
                         <div class="container">
                             <input type="button" onclick="decrementValue()" value="-" class="button_increment min_<?php echo $worth['idProduit'] ?>" />
@@ -77,32 +81,32 @@
                     <!-- </p id="subtotal-value">12</p> -->
                 </div>
             </div>
-            <script>
+            <!-- <script>
                 var price = document.getElementsByClassName('price') ;
                 var quantity = document.getElementsByClassName('quantity') ;
                 var subtotalproducts = document.getElementsByClassName('subtotalproducts');
                 var gtotal = document.getElementById('gtotal');
-                gt = 0 ;         
-                
-                         
+                gt = 0 ;                  
                 function incrementValue()
                 {
-                    alert("test2");
-                    var value = parseInt(document.getElementsByClassName('max_<?php echo $worth['idProduit'] ?>').value);
+                    // alert("test2");
+                    var value = parseInt(document.getElementsByClassName('max_<?php //echo $worth['idProduit'] ?>').value);
                     value = isNaN(value) ? 0 : value;
                     // if(value<100){
                         value++;
                             document.getElementById('quantity').value = value;
+                            
                             subtotal() ;
                     // }
                 }
                 function decrementValue()
                 {
-                    var value = parseInt(document.getElementsByClassName('max_<?php echo $worth['idProduit'] ?>').value);
+                    var value = parseInt(document.getElementsByClassName('max_<?php//kùkmllkk echo $worth['idProduit'] ?>').value);
                     value = isNaN(value) ? 0 : value;
                     if(value>1){
                         value--;
                             document.getElementById('quantity').value = value;
+                            
                             subtotal() ;
                     }
                 }
@@ -115,9 +119,14 @@
                     // gtotal.innerText = gt ;
                 } 
                 subtotal() ;
-            </script>
+            </script> -->
             
             <?php
+                if (isset($_GET['remove'])) {
+                    $id = $_GET['remove'];
+                  unset($_SESSION["cartArray"][$id]);
+                    // header("location:CartPage.php");
+                }
                 // $total_price += ($value['pquantity'] * $worth['prix']) ; 
                         }
                     

@@ -1,5 +1,5 @@
 <?php 
-  // session_start();
+  session_start();
 ?>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container-fluid">
@@ -26,22 +26,24 @@
             <!-- <li><a class="dropdown-item" href="#"></a></li> -->
           </ul>
         </li>
-      <a class="navbar-brand" href="CartPage.php"><img class="icon" src="images/panier1.png" >
-      <?php if(isset($_SESSION['cartArray'])){
-              $test = count(array_keys($_SESSION['cartArray']));
-              }?>
-        <span>
-          <?php
-            echo $test ; 
-            // if(isset($_SESSION['cartArray'])){
-            //   echo count(array_keys($_SESSION['cartArray']));
-            //   }
-            // else{
-            //   echo 0 ;
-            // }
-          ?>
-        </span>
-      </a>
+        <div class="countcart">
+          <a class="navbar-brand" href="CartPage.php"><img class="icon" src="images/panier1.png" >
+            
+          </a>
+          <span id="countproductcart">
+              <?php
+                // echo $test ; 
+                /////////////////////
+                if(isset($_SESSION['cartArray'])){
+                  echo count(array_keys($_SESSION['cartArray']));
+                  }
+                else{
+                  echo 0 ;
+                }
+              ?>
+            </span>
+        </div>
+      
 
     </div>
   </div>
