@@ -28,8 +28,9 @@ subtotal() ;
 function subtotal(){
     gt = 0 ;
     for(i=0;i<price.length; i++){
-        subtotalproducts[i].innerText=(price[i].value)*(quantity[i].value);
-        gt += (price[i].value)*(quantity[i].value);
+        var quantities = document.getElementsByClassName('quantity');
+        subtotalproducts[i].innerText=(price[i].value)*(quantities[i].value);
+        gt += (price[i].value)*(quantities[i].value);
     }
     gtotal.innerText = gt ;
 } 
