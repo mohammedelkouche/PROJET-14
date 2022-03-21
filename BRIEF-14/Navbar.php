@@ -26,18 +26,24 @@
             <!-- <li><a class="dropdown-item" href="#"></a></li> -->
           </ul>
         </li>
-      <a class="navbar-brand" href="CartPage.php"><img class="icon" src="images/panier1.png" >
-        <span>
-          <?php
-            if(isset($_SESSION['cartArray'])){
-              echo count($_SESSION['cartArray']);
-              }
-            else{
-              echo 0 ;
-            }
-          ?>
-        </span>
-      </a>
+        <div class="countcart">
+          <a class="navbar-brand" href="CartPage.php"><img class="icon" src="images/panier1.png" >
+            
+          </a>
+          <span id="countproductcart">
+              <?php
+                // echo $test ; 
+                /////////////////////
+                if(isset($_SESSION['cartArray'])){
+                  echo count(array_keys($_SESSION['cartArray']));
+                  }
+                else{
+                  echo 0 ;
+                }
+              ?>
+            </span>
+        </div>
+      
 
     </div>
   </div>

@@ -50,3 +50,21 @@ a{
     font-size: 17px;
     /* padding: 5px; */
 }
+#countproductcart{
+    /* margin-right: 20px; */
+    color: #D6A173;
+    position: absolute;
+
+}
+#countcart a {
+
+}
+.countcart{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* flex-wrap: nowrap;
+    align-content: stretch;
+    align-items: flex-end;
+    flex-direction: column-reverse; */
+}
