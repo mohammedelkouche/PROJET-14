@@ -21,7 +21,6 @@
 <body>
     <?php
     include "Navbar.php";
-
     if(mysqli_num_rows($result) > 0){
         $row = mysqli_fetch_assoc($result) ;
             echo' 
@@ -36,9 +35,9 @@
                                     <div> 
                                             <label for="">SELECT QUANTITY</label>
                                         <div class="input">
-                                            <input type="button" id="subtract" class="crementation"  value="-" " />
-                                            <input type="text" name="quantity" value="1"  size="1"  id="quantity" />
-                                            <input type="button"id="add" class="crementation"  value="+" "/>
+                                                <button type="button" class="button_increment min" >-</button>
+                                                <div class="withinDiv"><input type="text"  name="quantity" value="1"  size="1"  id="quantity" class="quantity" /></div>
+                                                <button type="button" class="button_increment max" >+</button>
                                         </div>
                                     </div>
                                     <div id="button-addtocart">
@@ -56,49 +55,10 @@
           }
           
         ?>   
-        <!-- <script>
-                var price = document.getElementsByClassName('price') ;
-                var quantity = document.getElementsByClassName('quantity') ;
-                var subtotalproducts = document.getElementsByClassName('subtotalproducts');
-                var gtotal = document.getElementById('gtotal');
-                gt = 0 ;                  
-                function incrementValue()
-                {
-                    // alert("test2");
-                    var value = parseInt(document.getElementsByClassName('max_<?php //echo $worth['idProduit'] ?>').value);
-                    value = isNaN(value) ? 0 : value;
-                    // if(value<100){
-                        value++;
-                            document.getElementById('quantity').value = value;
-                            subtotal() ;
-                    // }
-                }
-                function decrementValue()
-                {
-                    var value = parseInt(document.getElementsByClassName('max_<?php //echo $worth['idProduit'] ?>').value);
-                    value = isNaN(value) ? 0 : value;
-                    if(value>1){
-                        value--;
-                            document.getElementById('quantity').value = value;
-                            subtotal() ;
-                    }
-                }
-                function subtotal(){
-                    // gt = 0 ;
-                    for(i=0;i<price.length; i++){
-                        subtotalproducts[i].innerText=(price[i].value)*(quantity[i].value);
-                        // gt += (price[i].value)*(quantity[i].value);
-                    }
-                    // gtotal.innerText = gt ;
-                } 
-                subtotal() ;
-            </script>   -->
+
             <script src="script.js"></script>
     <?php 
      include "footer.php";
     ?> 
-    <!-- <a href="CartPage.php">ADD TO CART</a> -->
-    <!-- <img src="image/test-photo.jpg" alt="" width="300" height="300"> -->
 </body>
 </html>
-<input type="button">

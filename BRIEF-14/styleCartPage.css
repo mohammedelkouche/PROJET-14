@@ -47,7 +47,6 @@ h1{
     margin-left: 15px;
     font-size: 20px;
     /* font-weight: bold; */
-
 }
 #product-price-value{
     margin-left: 50px;
@@ -59,8 +58,14 @@ h1{
     margin-left: 300px;
 }
 .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 15Px;
     margin-left: 15px;
+}
+.withinDiv{
+    margin: 0px 5px;
 }
 .button_increment{
     width: 20px;

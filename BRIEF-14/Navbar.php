@@ -13,7 +13,7 @@
           <a class="nav-link" href="PAGE_PRINCIPALE.php">HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">SHOP</a>
+          <a class="nav-link" href="AllProduct.php">SHOP</a>
         </li>
       </ul>
       <li class="nav-item dropdown">

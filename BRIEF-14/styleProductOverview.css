@@ -29,21 +29,26 @@ h1{
     grid-gap: 60px;
     margin-top: 48px;
     margin-left: -7px;
-    /* display: flex;
-    justify-content: space-around; */
 }
 .input{
-    margin-left: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -48px;
+
 }
 label{
     margin-left: 55px;
 }
-.crementation{
+.button_increment{
     width: 20px;
 }
 #quantity{
     text-align: center;
-    width: 16%;
+    width: 100%;
+}
+.withinDiv{
+    margin: 0px 5px;
 }
 /* #button-addtocart{
     width: 82%;
